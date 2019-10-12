@@ -12,7 +12,7 @@ public class InPlaceIntHeapSort {
         int[] list4 = {-1, 0, 1}; // additional int array to test with
         // additional int array to test with
         int[] list5 = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10};
-        int[] list6 = {-10_000, 300, 0b100110, 0xFF, 010, (int)1.23e3}; // additional int array to test with
+        int[] list6 = {-10_000, 300, 0b100110, 0xFF, 010, (int)1.23e3, (int)'A'}; // additional int array to test with
 
         heapSort(list6);
         for (int i = 0; i < list6.length; i++)
@@ -41,9 +41,10 @@ public class InPlaceIntHeapSort {
 
     public static void heapSort(int[] list){
         int n = list.length; // The number of elements in the passed-in int Array, list
-        // int currentIndex = list.size() - 1; // <-- The index of the last node
+        // int lastIndex = list.size() - 1; // <-- The index of the last node
         // int parentIndex = (currentIndex - 1) / 2; // <-- The index of the parent Node
-
+        // int leftChild = (parentIndex * 2) + 1;
+        // int rightChild = (parentIndex * 2) + 2;
         // Part I: Turn the array into a max-heap
         /* for (i = 1 to n - 1)
                Compare parent_of_i and "Sift up" item at index i */
@@ -64,8 +65,10 @@ public class InPlaceIntHeapSort {
             // Note: The last index into the heap is now i – 1
             Compare r/l-child and "Sift down" element at index 0
          */
-        /**
+
         for(int i = (n - 1); i >= 1; i--){
+
+            /*
             if(list[0] < list[i]) {
                 int temp = list[0];
                 list[0] = list[i];
@@ -76,8 +79,9 @@ public class InPlaceIntHeapSort {
 
                 }
             }
+            */
         }
-         */
+
     }
 
 /** Heap sort method */
