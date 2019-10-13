@@ -67,15 +67,19 @@ public class InPlaceIntHeapSort {
          */
 
         for(int i = (n - 1); i >= 1; i--){
-            int temp = list[i];
-            list[i] = list[0];
-            list[0] = temp;
+            int temp = list[0];
+            list[0] = list[i];
+            list[i] = temp;
 
-            if(list[1] >= list[2] && list[1] > list[0]){
+            if(list[1] > list[2]){
                 temp = list[0];
                 list[0] = list[1];
                 list[1] = temp;
-            } 
+            } else{
+                temp = list[0];
+                list[0] = list[2];
+                list[2] = temp;
+            }
 
             /*
             if(list[0] < list[i]) {
@@ -93,6 +97,8 @@ public class InPlaceIntHeapSort {
 
     }
 
+
+
 /** Heap sort method */
 /*
 public static <E extends Comparable<E>> void heapSort(E[] list) {
@@ -108,6 +114,34 @@ public static <E extends Comparable<E>> void heapSort(E[] list) {
         list[i] = heap.remove();
 }
 */
+
+/*
+for(int i = (n - 1); i >= 1; i--){
+            int temp = list[i];
+            list[i] = list[0];
+            list[0] = temp;
+
+            if(list[1] >= list[2] && list[1] > list[0]){
+                temp = list[0];
+                list[0] = list[1];
+                list[1] = temp;
+            }
+
+            /*
+            if(list[0] < list[i]) {
+                int temp = list[0];
+                list[0] = list[i];
+                list[i] = temp;
+            }
+            if(i == 1){
+                if(list[i] < list[i + 1]){
+
+                }
+            }
+            */
+/*
+}
+ */
 
 private void siftUp(int[] list) {
     int k = list.length - 1;
