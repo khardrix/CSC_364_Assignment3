@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class InPlaceIntHeapSort {
@@ -80,7 +81,6 @@ public class InPlaceIntHeapSort {
                 list[0] = list[2];
                 list[2] = temp;
             }
-
             /*
             if(list[0] < list[i]) {
                 int temp = list[0];
@@ -93,6 +93,7 @@ public class InPlaceIntHeapSort {
                 }
             }
             */
+            System.out.println(i + ") " + Arrays.toString(list));
         }
 
     }
@@ -114,6 +115,41 @@ public static <E extends Comparable<E>> void heapSort(E[] list) {
         list[i] = heap.remove();
 }
 */
+
+/*
+for(int i = (n - 1); i >= 1; i--){
+            int temp = list[0];
+            list[0] = list[i];
+            list[i] = temp;
+
+            if(list[1] > list[2]){
+                temp = list[0];
+                list[0] = list[1];
+                list[1] = temp;
+            } else{
+                temp = list[0];
+                list[0] = list[2];
+                list[2] = temp;
+            }
+            /*
+            if(list[0] < list[i]) {
+                int temp = list[0];
+                list[0] = list[i];
+                list[i] = temp;
+            }
+            if(i == 1){
+                if(list[i] < list[i + 1]){
+
+                }
+            }
+            */
+/*
+}
+ */
+
+
+
+
 
 /*
 for(int i = (n - 1); i >= 1; i--){
