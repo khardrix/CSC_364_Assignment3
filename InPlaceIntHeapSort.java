@@ -14,9 +14,9 @@ public class InPlaceIntHeapSort {
         int[] list5 = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10};
         int[] list6 = {-10_000, 300, 0b100110, 0xFF, 010, (int)1.23e3, (int)'A'}; // additional int array to test with
 
-        heapSort(list6);
-        for (int i = 0; i < list6.length; i++)
-            System.out.print(list6[i] + " ");
+        heapSort(list);
+        for (int i = 0; i < list.length; i++)
+            System.out.print(list[i] + " ");
     }
 
 
@@ -67,6 +67,15 @@ public class InPlaceIntHeapSort {
          */
 
         for(int i = (n - 1); i >= 1; i--){
+            int temp = list[i];
+            list[i] = list[0];
+            list[0] = temp;
+
+            if(list[1] >= list[2] && list[1] > list[0]){
+                temp = list[0];
+                list[0] = list[1];
+                list[1] = temp;
+            } 
 
             /*
             if(list[0] < list[i]) {
